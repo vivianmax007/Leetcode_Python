@@ -1,0 +1,23 @@
+class Solution(object):
+    def matrixReshape(self, nums, r, c):
+        """
+        :type nums: List[List[int]]
+        :type r: int
+        :type c: int
+        :rtype: List[List[int]]
+        """
+        newRow = len(nums)
+        newCol = len(nums[0])
+                      
+        if (newRow * newCol) == (r * c):
+            Arrayone = []
+            reshaped = [[0]* c for i in range(r)]
+            for x in nums:
+                      Arrayone += x
+            for index, item in enumerate (Arrayone):
+                placerow = index / c
+                placecol = index % c
+                reshaped[placerow][placecol] = item
+            return reshaped
+        else:
+            return nums
