@@ -1,0 +1,20 @@
+class Solution(object):
+    def nextGreaterElement(self, findNums, nums):
+        """
+        :type findNums: List[int]
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        results = []
+        for item1 in findNums:
+            # index in nums
+            idx = nums.index(item1)
+            for item2 in nums[idx:]:
+                if item2 > item1:
+                    results.append(item2)
+                    break
+                    
+            else:
+                results.append(-1)
+        return results
+            
